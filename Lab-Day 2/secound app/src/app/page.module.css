@@ -239,8 +239,13 @@
   width: 20vw;
   position: fixed;
   top: 10vh;
-  left: 0px;
+  left: -20vw;
   z-index: 101;
+  transition: all .5s ease;
+}
+
+.sidebar:hover{
+  left: 0vw;
 }
 
 .section { 
