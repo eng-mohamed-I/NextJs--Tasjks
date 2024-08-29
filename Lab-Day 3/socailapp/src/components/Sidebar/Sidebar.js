@@ -10,13 +10,13 @@ const Sidebar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.arrow}></div>
-      <Link href={"/"} className={styles.li}>
+      <Link href={"/"} className={`${styles.li} ${styles.link}`}>
         <span>
           <FaHouse />
         </span>
         &nbsp; Home
       </Link>
-      <Link href={"/post"} className={styles.li}>
+      <Link href={"/posts"} className={`${styles.li} ${styles.link}`}>
         <FaSearch /> &nbsp; Explore
       </Link>
       <li className={styles.li}>
@@ -28,9 +28,10 @@ const Sidebar = () => {
         <FaMessage />
         &nbsp; Messages
       </li>
-      <li className={styles.li}>
-        <FaUser /> &nbsp; Profile
-      </li>
+      <Link className={`${styles.li} ${styles.link}`} href={"/blog"}>
+        {" "}
+        <FaUser /> &nbsp; MyBlogs
+      </Link>
       <li className={styles.li}>
         {" "}
         <MdMore />

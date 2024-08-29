@@ -19,8 +19,8 @@ const Header = () => {
         Home
       </Link>
       <Link
-        className={`${style.navItem} ${path == "/post" ? style.active : ""}`}
-        href="/post"
+        className={`${style.navItem} ${path == "/posts" ? style.active : ""}`}
+        href="/posts"
       >
         Posts
       </Link>

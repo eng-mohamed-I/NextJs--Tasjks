@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
-import Head from "next/head";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import Sidebar from "@/components/Sidebar/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,11 +14,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="shortcut icon" href="/static/pngegg.png" />
-      </Head>
       <body className={inter.className}>
         <Header />
+        <div className="sidebar">
+          <Sidebar />
+        </div>
         <main className="main-layout">{children}</main>
         <Footer />
       </body>

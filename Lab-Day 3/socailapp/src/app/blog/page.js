@@ -2,6 +2,11 @@ import dbConnect from "../../../lib/mogodb";
 import styles from "./blog.module.css";
 import { dbBlogs } from "../../../data/db";
 
+export const metadata = {
+  title: "Blogs | Gaza",
+  description: "Posts Page",
+};
+
 // ##SSR Server Side Rendering(render in client side -render every time i fetch)
 export const fetchCache = "force-no-store";
 
@@ -29,12 +34,11 @@ const Blog = async () => {
 
   return (
     <div className={styles.container}>
-      <h1>My Blog</h1>
       <div className={styles.posts}>
         {blogs.map((blog) => (
           <div key={blog.id} className={styles.post}>
-            <h2>{blog.title}</h2>
-            <p>{blog.body}</p>
+            <h2 className={styles.h2}>{blog.title}</h2>
+            <p className={styles.p}>{blog.body}</p>
             <a href="" className={styles.readMore}>
               Read More
             </a>
