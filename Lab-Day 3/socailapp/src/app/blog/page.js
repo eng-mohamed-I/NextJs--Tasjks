@@ -1,6 +1,7 @@
 import dbConnect from "../../../lib/mogodb";
 import styles from "./blog.module.css";
 import { dbBlogs } from "../../../data/db";
+import Link from "next/link";
 
 export const metadata = {
   title: "Blogs | Gaza",
@@ -34,9 +35,17 @@ const Blog = async () => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.btnContainer}>
+        <button class={styles.addbutton}>
+          <Link className={styles.link} href={"/blog/addblog"}>
+            Add Blog
+          </Link>
+        </button>
+      </div>
       <div className={styles.posts}>
-        {blogs.map((blog) => (
+        {blogs.reverse().map((blog) => (
           <div key={blog.id} className={styles.post}>
+            <div>{blog.new == true ? "new" : ""}</div>
             <h2 className={styles.h2}>{blog.title}</h2>
             <p className={styles.p}>{blog.body}</p>
             <a href="" className={styles.readMore}>
