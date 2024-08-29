@@ -68,7 +68,7 @@ const Posts = async () => {
             <h4>content</h4>
             <div>{post.body}</div>
             <Link href={`/posts/${post.id}`}>show more</Link>
-            <div className={styles.events} >
+            <div className={styles.events}>
               <div>
                 <BiLike />
               </div>
@@ -79,6 +79,7 @@ const Posts = async () => {
                 <FaRegShareSquare />
               </div>
             </div>
+            <div></div>
           </div>
         ))}
       </div>

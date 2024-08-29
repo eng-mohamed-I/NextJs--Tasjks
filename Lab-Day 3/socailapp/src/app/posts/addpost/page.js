@@ -21,8 +21,7 @@ export default function PostForm() {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      setErrors({});
-      onSubmited(); //send data
+      setErrors({}); //send data
       setTitle("");
       setBody("");
     }
@@ -35,7 +34,7 @@ export default function PostForm() {
       let postsLength = posts.length;
       console.log(postsLength);
       const formData = {
-        id: postsLength + 1,
+        id: posts[postsLength - 1].id + 1,
         userId: 1,
         title: title,
         body: body,
